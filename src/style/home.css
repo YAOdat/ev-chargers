@@ -1,0 +1,53 @@
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin as needed */
+  }
+  
+  .hero-left-side {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-title {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333;
+    margin-right: 20px; /* Add margin as needed */
+  }
+  
+  .hero-image {
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+  }
+  
+  p {
+    margin-top: 10px; /* Add margin as needed */
+  }
+  
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .main-button {
+    background-color: #7FC21A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .main-button:hover {
+    background-color: #41C969; /* Change color on hover */
+  }
