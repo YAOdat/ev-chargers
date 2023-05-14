@@ -1,0 +1,206 @@
+.chargers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .chargers-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .charger-card {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* MAKE ALL THE CARDS THE SAME SIZE; */
+    min-height: 400px;
+    width: 800px;
+
+
+  }
+
+ 
+  
+  .charger-name {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .charger-price {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .charger-description {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  /* Hover effect */
+  .charger-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .charger-image {
+    width: 175px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .charger-image:hover {
+    transform: scale(2.1);
+  }
+  
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .product-button {
+    display: inline-block;
+    background-color: #7FC21A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .product-button:hover {
+    background-color: #7FE21A;
+  }
+  
+  .product-button:active {
+    background-color: #71C21A;
+  }
+  
+  .product-button a {
+    color: white; /* Change to your desired green color */
+    text-decoration: none;
+  }
+
+  .product-button {
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ar-icon {
+    margin-right: 5px;
+  }
+  
+  
+  .order-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .order-button:hover {
+    background-color: #7FC21A;
+  }
+  
+  .order-button:active {
+    background-color: #7FC21A;
+  }
+  
+  .order-button .whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+
+  .order-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .order-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border: 2px dashed #00ff00;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    animation: electricity 1s infinite;
+  }
+  
+  @keyframes electricity {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  
+  .order-button:hover::before {
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .chargers-title {
+      font-size: 24px;
+    }
+  
+    .charger-name {
+      font-size: 20px;
+    }
+  
+    .charger-price {
+      font-size: 16px;
+    }
+  
+    .charger-description {
+      font-size: 14px;
+    }
+  }
+  
