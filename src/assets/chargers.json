@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Mega Portable EV Charger",
+        "price": "900 AED",
+        "description": "Mega Portable EV Charger is a portable charger that can be used to charge your electric vehicle at home or on the go. It is compatible with all electric vehicles and can charge up to 3 times faster than a standard wall outlet. The Mega Portable EV Charger is easy to use, just plug it into any standard 120V outlet and you're ready to go! It's also lightweight and compact so it won't take up much space in your car or garage. You'll never have to worry about running out of juice again!",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/61%2B%2B6%2B8Q%2BZQL._AC_SL1500_.jpg",
+        "category": "Charger",
+        "relatedProducts": [
+            "2",
+            "3"
+        ]
+
+        
+    }
+]

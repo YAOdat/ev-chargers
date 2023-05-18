@@ -1,14 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import slugify from "slugify";
 import '../style/chargers.css';
 import chargerImage1 from "../assets/mega_portable_ev_charger.png";
 import chargerImage2 from "../assets/wallkbox_EV_charger.png";
 import extensionCableImage from "../assets/exten_cable.jpg";
 import { FaWhatsapp } from 'react-icons/fa';
 import { MdViewTimeline } from 'react-icons/md';
-import Lottie from "react-lottie";
-import animationData from "../assets/charging-electricity.json";
 
 function Chargers() {
   const chargers = [
@@ -35,57 +34,50 @@ function Chargers() {
     },
   ];
 
-  const lottieOptions = {
-    loop: true,
-    autoplay: false,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   return (
     <div className="chargers-container">
-    <Helmet>
-      <title>Available Chargers - MEV Chargers</title>
-      <meta name="description" content="Browse through a wide range of available electric car chargers. Choose the best charger for your needs and order online." />
-    </Helmet>
-    <h1 className="chargers-title">Available EV Chargers</h1>
-    {chargers.map((charger) => (
-      <div key={charger.id} className="charger-card">
-        <div className="charger-info">
-          <div className="charger-details">
-            <h2 className="charger-name">{charger.name}</h2>
-            <p className="charger-price">Price: {charger.price}</p>
-            <p className="charger-description">{charger.description}</p>
+      <Helmet>
+        <title>Available Chargers - MEV Chargers</title>
+        <meta name="description" content="Browse through a wide range of available electric car chargers. Choose the best charger for your needs and order online." />
+      </Helmet>
+      <h1 className="chargers-title">Available EV Chargers</h1>
+      {chargers.map((charger) => {
+        const slug = slugify(charger.name, { lower: true });
+        const productUrl = `/chargers/${slug}`;
+
+        return (
+          <div key={charger.id} className="charger-card">
+            <div className="charger-info">
+              <div className="charger-details">
+                <h2 className="charger-name">{charger.name}</h2>
+                <p className="charger-price">Price: {charger.price}</p>
+                <p className="charger-description">{charger.description}</p>
+              </div>
+              <div className="charger-image-container">
+                <img src={charger.image} alt={charger.name} className="charger-image" />
+              </div>
+            </div>
+            <div className="button-container">
+              <button className="product-button">
+                <MdViewTimeline className="ar-icon" />
+                <Link to={{
+                  pathname: productUrl,
+                  state: { charger }
+                }}>View Details</Link>
+              </button>
+              <a
+                href={`https://api.whatsapp.com/send?phone=971501679410&text=mevcharger.com-${encodeURIComponent(charger.name)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="order-button"
+              >
+                <FaWhatsapp className="whatsapp-icon" />
+                Order on WhatsApp
+              </a>
+            </div>
           </div>
-          <div className="charger-image-container">
-            <img src={charger.image} alt={charger.name} className="charger-image" />
-          
-          </div>
-        </div>
-        <div className="button-container">
-          <button className="product-button">
-            <MdViewTimeline className="ar-icon" />
-            <Link to={`/chargers/${charger.name.replace(/\s+/g, '-')}`}>View Details</Link>
-          </button>
-          <a
-            href={`https://api.whatsapp.com/send?phone=971501679410&text=mevcharger.com-${encodeURIComponent(charger.name)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="order-button"
-          >
-            <FaWhatsapp className="whatsapp-icon" />
-            Order on WhatsApp
-            <Lottie
-              options={lottieOptions}
-              height={30}
-              width={30}
-            />
-          </a>
-        </div>
-        </div>
-        ))}
+        );
+      })}
     </div>
   );
 }

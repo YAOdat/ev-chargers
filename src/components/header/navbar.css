@@ -8,6 +8,9 @@
   left: 0;
   right: 0;
   z-index: 999;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  height: 20px;
 }
 
 .navbar-left {
@@ -29,19 +32,19 @@
 }
 
 .navbar-links a {
-padding: 5px;
-margin: 0 10px;
-text-decoration: none;
-font-size: 0.9em;
-font-weight: 500;
-color: #7FC21A;
+  padding: 5px;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #7FC21A;
 }
 
 .navbar-links a:hover {
   color: white;
   background-color: #7FC21A;
   border-radius: 7px;
-  }
+}
 
 .navbar-links.show {
   display: flex;
@@ -67,7 +70,6 @@ color: #7FC21A;
   font-size: 1.5rem;
   cursor: pointer;
 }
-
 
 @media screen and (max-width: 768px) {
   .navbar-links {

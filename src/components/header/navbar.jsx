@@ -22,6 +22,7 @@ export default function NavBar() {
           <Link to="/">Home</Link>
           <Link to="/chargers">Chargers</Link>
           <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/contact">+971 501 679 410</Link>
         </div>
         <button className="menu-btn" onClick={handleToggleClick}>

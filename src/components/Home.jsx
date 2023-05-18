@@ -3,6 +3,8 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/homepage-hero-section.png";
 import "../style/home.css";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 function Home() {
   const navigate = useNavigate();
@@ -10,6 +12,7 @@ function Home() {
   const handleButtonClick = () => {
     navigate("/chargers");
   };
+
 
   return (
     <HelmetProvider>
@@ -40,6 +43,7 @@ function Home() {
             <img src={heroImage} alt="Hero" className="hero-image" />
           </div>
         </div>
+     
       </div>
     </HelmetProvider>
   );
