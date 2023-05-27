@@ -29,7 +29,7 @@ function Chargers() {
       name: "Extension Cable",
       price: "550 AED",
       image: extensionCableImage,
-      description: "Type 2 to GB/T 32 A Extension cable for EV Chargers. It comes in 5 meters length.",
+      description: "Type 2 to GB/T 32 A Extension cable for EV Chargers. It comes in 5 meters length. It is useful for charging from a public charger that does not have a long enough cable.",
     },
   ];
   const navigate = useNavigate();
