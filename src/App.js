@@ -6,6 +6,7 @@ import Chargers from "./components/Chargers";
 import Charger from "./components/Charger";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Product from "./components/Product";
 import Blog from "./components/Blogs";
 import Footer from "./components/Footer";
 
@@ -16,9 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/chargers" element={<Chargers />} />
-        <Route path="/chargers/:slug" element={<Charger />} />
+        <Route path="/chargers/:chargerId" element={<Charger />} />
+        <Route path="/contact" element={<Product />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />

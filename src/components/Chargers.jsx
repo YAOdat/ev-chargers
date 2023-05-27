@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import slugify from "slugify";
+import { Link, useNavigate } from "react-router-dom";
 import '../style/chargers.css';
 import chargerImage1 from "../assets/mega_portable_ev_charger.png";
 import chargerImage2 from "../assets/wallkbox_EV_charger.png";
@@ -33,6 +32,8 @@ function Chargers() {
       description: "Type 2 to GB/T 32 A Extension cable for EV Chargers. It comes in 5 meters length.",
     },
   ];
+  const navigate = useNavigate();
+
 
   return (
     <div className="chargers-container">
@@ -42,8 +43,7 @@ function Chargers() {
       </Helmet>
       <h1 className="chargers-title">Available EV Chargers</h1>
       {chargers.map((charger) => {
-        const slug = slugify(charger.name, { lower: true });
-        const productUrl = `/chargers/${slug}`;
+    
 
         return (
           <div key={charger.id} className="charger-card">
@@ -58,13 +58,12 @@ function Chargers() {
               </div>
             </div>
             <div className="button-container">
-              <button className="product-button">
-                <MdViewTimeline className="ar-icon" />
-                <Link to={{
-                  pathname: productUrl,
-                  state: { charger }
-                }}>View Details</Link>
-              </button>
+            <button className="product-button" onClick={() => navigate(`/chargers/${charger.id}`)}>
+  <MdViewTimeline className="ar-icon" />
+  View Product
+</button>
+
+
               <a
                 href={`https://api.whatsapp.com/send?phone=971501679410&text=mevcharger.com-${encodeURIComponent(charger.name)}`}
                 target="_blank"
