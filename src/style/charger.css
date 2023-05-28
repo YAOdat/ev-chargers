@@ -132,15 +132,5 @@
     text-align: center;
   }
   
+/* make the page responsive */
 
-    @keyframes hover {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }   
-    }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../Images/mevchargerslogo.png";
@@ -11,6 +11,21 @@ export default function NavBar() {
     setShowLinks(!showLinks);
   };
 
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth > 768) {
+        setShowLinks(true);
+      } else {
+        setShowLinks(false);
+      }
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <div className="navbar">
       <div className="navbar-left">
@@ -18,7 +33,7 @@ export default function NavBar() {
       </div>
 
       <div className="navbar-right">
-        <div className={`navbar-links ${showLinks ? "hidden" : ""}`}>
+        <div className={`links-container-${showLinks ? "" : "hidden"}`}>
           <Link to="/">Home</Link>
           <Link to="/chargers">Chargers</Link>
           <Link to="/about">About</Link>
